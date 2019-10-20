@@ -25,7 +25,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     init {
         val playerDao = PlayerRoomDatabase.getDatabase(application).playerDao()
         repository = PlayerRepository(playerDao)
-        player = repository.player
+        player =  repository.player
     }
 
     // TODO: next meeting learn how to persist data (using room)

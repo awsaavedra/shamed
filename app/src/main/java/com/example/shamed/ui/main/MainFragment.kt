@@ -37,10 +37,16 @@ class MainFragment : Fragment() {
         weightEditText = v.findViewById<View>(R.id.weight) as EditText
 
         viewModel.player.observe(viewLifecycleOwner, Observer {
+            if (it == null) {
+                initializePlayerValues()
+                return@Observer
+            }
+
             updateHeight(it.height)
             updateWeight(it.weight)
             updateUsername(it.username)
         })
+
         return v
     }
 
@@ -73,4 +79,11 @@ class MainFragment : Fragment() {
             userNameEditText.setText(name)
         }
     }
+
+    fun initializePlayerValues() {
+        updateHeight(0)
+        updateWeight(250)
+        updateUsername("")
+    }
+
 }
