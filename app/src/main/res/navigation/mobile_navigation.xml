@@ -20,24 +20,13 @@
         android:name="com.example.shamed.ui.main.MainFragment"
         android:label="@string/main"
         tools:layout="@layout/fragment_main">
-
-<!--        &lt;!&ndash; TODO STEP 7.1 - Add action with transitions &ndash;&gt;-->
-<!--        <action-->
-<!--            android:id="@+id/next_action"-->
-<!--            app:destination="@+id/flow_step_one_dest"-->
-<!--            app:enterAnim="@anim/slide_in_right"-->
-<!--            app:exitAnim="@anim/slide_out_left"-->
-<!--            app:popEnterAnim="@anim/slide_in_left"-->
-<!--            app:popExitAnim="@anim/slide_out_right" />-->
-<!--        &lt;!&ndash; TODO END STEP 7.1 &ndash;&gt;-->
-
         <action
-            android:id="@+id/action_home_dest_to_flow_step_one_dest"
-            app:destination="@id/flow_step_one_dest" />
+            android:id="@+id/action_home_dest_to_fragment_signup2"
+            app:destination="@id/fragment_signup" />
     </fragment>
 
     <fragment
-        android:id="@+id/flow_step_one_dest"
+        android:id="@id/fragment_signin"
         android:name="com.example.shamed.ui.main.MainFragment"
         tools:layout="@layout/fragment_signin">
         <argument
@@ -45,27 +34,24 @@
             app:argType="integer"
             android:defaultValue="1"/>
 
-        <action
-            android:id="@+id/action_flow_step_one_dest_to_flow_step_one_dest2"
-            app:destination="@id/flow_step_one_dest2" />
     </fragment>
     <fragment
-        android:id="@+id/flow_step_one_dest2"
+        android:id="@+id/fragment_signup"
         android:name="com.example.shamed.ui.main.MainFragment"
-        tools:layout="@layout/fragment_signin">
+        tools:layout="@layout/fragment_signup">
         <argument
             android:name="flowStepNumber"
             android:defaultValue="1"
             app:argType="integer" />
 
         <action
-            android:id="@+id/action_flow_step_one_dest2_to_flow_step_one_dest3"
-            app:destination="@id/flow_step_one_dest3" />
+            android:id="@+id/action_fragment_signup_to_avatar"
+            app:destination="@+id/fragment_avatar" />
     </fragment>
     <fragment
-        android:id="@+id/flow_step_one_dest3"
+        android:id="@id/fragment_avatar"
         android:name="com.example.shamed.ui.main.MainFragment"
-        tools:layout="@layout/fragment_signin">
+        tools:layout="@layout/fragment_avatar">
         <argument
             android:name="flowStepNumber"
             android:defaultValue="1"
@@ -73,12 +59,25 @@
 
         <action
             android:id="@+id/action_flow_step_one_dest3_to_flow_step_one_dest4"
-            app:destination="@id/flow_step_one_dest4" />
+            app:destination="@+id/fragment_goals" />
     </fragment>
     <fragment
-        android:id="@+id/flow_step_one_dest4"
+        android:id="@id/fragment_goals"
         android:name="com.example.shamed.ui.main.MainFragment"
-        tools:layout="@layout/fragment_signin">
+        tools:layout="@layout/fragment_goals">
+        <argument
+            android:name="flowStepNumber"
+            android:defaultValue="1"
+            app:argType="integer" />
+
+        <action
+            android:id="@+id/action_fragment_goals_to_fragment_goals2"
+            app:destination="@id/fragment_goals2" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_goals2"
+        android:name="com.example.shamed.ui.main.MainFragment"
+        tools:layout="@layout/fragment_goals">
         <argument
             android:name="flowStepNumber"
             android:defaultValue="1"
@@ -88,27 +87,4 @@
             android:id="@+id/next_action"
             app:destination="@+id/action_flow_step_one_dest_to_flow_step_one_dest2"></action>
     </fragment>
-
-<!--    &lt;!&ndash; TODO STEP 4 Create a new navigation destination pointing to SettingsFragment &ndash;&gt;-->
-<!--    <fragment-->
-<!--        android:id="@+id/settings_dest"-->
-<!--        android:name="com.example.android.codelabs.navigation.SettingsFragment"-->
-<!--        android:label="@string/settings"-->
-<!--        tools:layout="@layout/settings_fragment" />-->
-
-<!--    <fragment-->
-<!--        android:id="@+id/deeplink_dest"-->
-<!--        android:name="com.example.android.codelabs.navigation.DeepLinkFragment"-->
-<!--        android:label="@string/deeplink"-->
-<!--        tools:layout="@layout/deeplink_fragment">-->
-
-<!--        <argument-->
-<!--            android:name="myarg"-->
-<!--            android:defaultValue="Android!"/>-->
-<!--        &lt;!&ndash; TODO STEP 11.1 - Add a deep link to www.example.com/{myarg}/ &ndash;&gt;-->
-
-<!--        &lt;!&ndash;<deepLink app:uri="www.example.com/{myarg}" />&ndash;&gt;-->
-
-<!--        &lt;!&ndash; TODO END STEP 11.1 &ndash;&gt;-->
-<!--    </fragment>-->
 </navigation>

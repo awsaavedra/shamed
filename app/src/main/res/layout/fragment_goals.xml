@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:id="@+id/fragment_signup"
+    android:id="@+id/fragment_goals"
     android:layout_height="match_parent">
 
     <com.google.android.material.textfield.TextInputEditText
@@ -9,7 +9,7 @@
         android:layout_width="138dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:hint="email"
+        android:hint="nutrition/diet"
         android:paddingHorizontal="20dp"
         android:paddingVertical="20dp" />
 
@@ -18,13 +18,14 @@
         android:layout_width="141dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:hint="password"
+        android:hint="exercise"
         android:paddingHorizontal="20dp"
         android:paddingVertical="20dp" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/button2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Google Sign_Up" />
+        android:text="Submit Goals" />
+
 </LinearLayout>
