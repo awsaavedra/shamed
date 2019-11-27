@@ -86,24 +86,8 @@
 
         <action
             android:id="@+id/next_action"
-            app:destination="@+id/flow_step_two_dest"></action>
+            app:destination="@+id/action_flow_step_one_dest_to_flow_step_one_dest2"></action>
     </fragment>
-
-    <!--    <fragment-->
-<!--        android:id="@+id/flow_step_two_dest"-->
-<!--        android:name="com.example.android.codelabs.navigation.FlowStepFragment"-->
-<!--        tools:layout="@layout/flow_step_two_fragment">-->
-
-<!--        <argument-->
-<!--            android:name="flowStepNumber"-->
-<!--            app:argType="integer"-->
-<!--            android:defaultValue="2"/>-->
-
-<!--        <action-->
-<!--            android:id="@+id/next_action"-->
-<!--            app:popUpTo="@id/home_dest">-->
-<!--        </action>-->
-<!--    </fragment>-->
 
 <!--    &lt;!&ndash; TODO STEP 4 Create a new navigation destination pointing to SettingsFragment &ndash;&gt;-->
 <!--    <fragment-->
