@@ -46,12 +46,50 @@
             android:defaultValue="1"/>
 
         <action
+            android:id="@+id/action_flow_step_one_dest_to_flow_step_one_dest2"
+            app:destination="@id/flow_step_one_dest2" />
+    </fragment>
+    <fragment
+        android:id="@+id/flow_step_one_dest2"
+        android:name="com.example.shamed.ui.main.MainFragment"
+        tools:layout="@layout/fragment_signin">
+        <argument
+            android:name="flowStepNumber"
+            android:defaultValue="1"
+            app:argType="integer" />
+
+        <action
+            android:id="@+id/action_flow_step_one_dest2_to_flow_step_one_dest3"
+            app:destination="@id/flow_step_one_dest3" />
+    </fragment>
+    <fragment
+        android:id="@+id/flow_step_one_dest3"
+        android:name="com.example.shamed.ui.main.MainFragment"
+        tools:layout="@layout/fragment_signin">
+        <argument
+            android:name="flowStepNumber"
+            android:defaultValue="1"
+            app:argType="integer" />
+
+        <action
+            android:id="@+id/action_flow_step_one_dest3_to_flow_step_one_dest4"
+            app:destination="@id/flow_step_one_dest4" />
+    </fragment>
+    <fragment
+        android:id="@+id/flow_step_one_dest4"
+        android:name="com.example.shamed.ui.main.MainFragment"
+        tools:layout="@layout/fragment_signin">
+        <argument
+            android:name="flowStepNumber"
+            android:defaultValue="1"
+            app:argType="integer" />
+
+        <action
             android:id="@+id/next_action"
-            app:destination="@+id/flow_step_two_dest">
-        </action>
+            app:destination="@+id/flow_step_two_dest"></action>
     </fragment>
 
-<!--    <fragment-->
+    <!--    <fragment-->
 <!--        android:id="@+id/flow_step_two_dest"-->
 <!--        android:name="com.example.android.codelabs.navigation.FlowStepFragment"-->
 <!--        tools:layout="@layout/flow_step_two_fragment">-->
