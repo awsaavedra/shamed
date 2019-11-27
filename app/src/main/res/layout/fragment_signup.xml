@@ -3,4 +3,34 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/name"
+        android:layout_width="138dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:hint="email"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="20dp" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/password"
+        android:layout_width="141dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:hint="password"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="20dp" />
+
+    <TextView
+        android:id="@+id/signupText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Sign Up" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Google Sign_Up" />
 </LinearLayout>
