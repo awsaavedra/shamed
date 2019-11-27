@@ -45,7 +45,7 @@
             android:textSize="14sp" />
 
         <EditText
-            android:id="@+id/username"
+            android:id="@+id/input_username"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/blah"
@@ -59,7 +59,7 @@
             android:textSize="14sp" />
 
         <EditText
-            android:id="@+id/age"
+            android:id="@+id/input_age"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="14sp" />
@@ -72,7 +72,7 @@
             android:textSize="14sp" />
 
         <EditText
-            android:id="@+id/height"
+            android:id="@+id/input_height"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="14sp" />
@@ -85,7 +85,7 @@
             android:textSize="14sp" />
 
         <EditText
-            android:id="@+id/weight"
+            android:id="@+id/input_weight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/defaultWeight"
@@ -94,7 +94,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/Save"
+        android:id="@+id/button_save"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@android:color/holo_green_light"

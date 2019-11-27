@@ -7,10 +7,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.Observer
 import com.example.shamed.R
+import kotlinx.android.synthetic.main.main_fragment.*
 
 class MainFragment : Fragment() {
 
@@ -21,20 +21,18 @@ class MainFragment : Fragment() {
     private lateinit var viewModel: MainViewModel
     private lateinit var hostActivity: FragmentActivity
 
-    // todo BAD, fix by grabbing views correctly
-    private lateinit var userNameEditText: EditText// = v.findViewById<View>(R.id.username)
-    private lateinit var heightEditText: EditText
-    private lateinit var weightEditText: EditText
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         val v = inflater.inflate(R.layout.main_fragment, container, false)
 
-        userNameEditText = v.findViewById<View>(R.id.username) as EditText
-        heightEditText = v.findViewById<View>(R.id.height) as EditText
-        weightEditText = v.findViewById<View>(R.id.weight) as EditText
+        button_save.setOnClickListener {
+            viewModel.save(Player(username=input_username.text.toString(),
+                height=input_height.text.toString().toInt(),
+                weight=input_weight.text.toString().toInt(), gems=0)
+            )
+        }
 
         viewModel.player.observe(viewLifecycleOwner, Observer {
             if (it == null) {
@@ -64,19 +62,19 @@ class MainFragment : Fragment() {
     // todo, import kapt, use runOnUiThread {}
     fun updateHeight(height: Int) {
        activity?.runOnUiThread {
-           heightEditText.setText("$height")
+           input_height.setText("$height")
        }
     }
 
     fun updateWeight(weight: Int) {
         activity?.runOnUiThread {
-            weightEditText.setText("$weight")
+            input_weight.setText("$weight")
         }
     }
 
     fun updateUsername(name: String) {
         activity?.runOnUiThread {
-            userNameEditText.setText(name)
+            input_username.setText(name)
         }
     }
 

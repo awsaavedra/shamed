@@ -2,6 +2,7 @@ package com.example.shamed.ui.main
 
 import android.app.Application
 import androidx.lifecycle.*
+import kotlinx.coroutines.launch
 
 // What is this shorthand for?
 // todo: read https://kotlinlang.org/docs/reference/classes.html
@@ -26,6 +27,10 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         val playerDao = PlayerRoomDatabase.getDatabase(application).playerDao()
         repository = PlayerRepository(playerDao)
         player =  repository.player
+    }
+
+    fun save(player: Player) = viewModelScope.launch{
+        repository.insert(player)
     }
 
     // TODO: next meeting learn how to persist data (using room)
