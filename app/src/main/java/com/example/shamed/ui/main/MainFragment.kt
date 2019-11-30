@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.shamed.R
+import com.google.firebase.auth.FirebaseAuth
 
 class MainFragment : Fragment() {
 
@@ -15,6 +16,7 @@ class MainFragment : Fragment() {
     }
 
     private lateinit var viewModel: MainViewModel
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,6 +28,7 @@ class MainFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
+
         // TODO: Use the ViewModel
     }
 

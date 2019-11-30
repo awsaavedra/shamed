@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "901814575642",
+    "firebase_url": "https://shamed.firebaseio.com",
+    "project_id": "shamed",
+    "storage_bucket": "shamed.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:901814575642:android:f819dd974363a50916a7a3",
+        "android_client_info": {
+          "package_name": "com.example.shamed"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "901814575642-40s4dar895n6n4p44cfru8p3vo33hk1g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.shamed",
+            "certificate_hash": "f3ddc838a394fd91c0d01b88935b313eb171013b"
+          }
+        },
+        {
+          "client_id": "901814575642-rk0992m0pebs644c0p37hf7o50thf87s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAl3WQxolOp-nQ1Y5dtVVw1N1-GFQH-Z6Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "901814575642-rk0992m0pebs644c0p37hf7o50thf87s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
