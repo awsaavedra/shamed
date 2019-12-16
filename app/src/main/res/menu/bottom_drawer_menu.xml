@@ -15,11 +15,11 @@
     <group android:id="@+id/primary">
         <item
             android:id="@+id/home_dest"
-            android:icon="@drawable/ic_home"
+            android:icon="@drawable/ic_home_black_24dp"
             android:title="@string/home" />
         <item
             android:id="@+id/settings_dest"
-            android:icon="@drawable/ic_settings"
+            android:icon="@drawable/ic_settings_black_24dp"
             android:title="@string/home" />
 
     </group>
