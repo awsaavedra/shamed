@@ -12,12 +12,13 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_centerVertical="true"
+        android:layout_marginTop="48dp"
+        android:background="@android:color/holo_blue_light"
         android:contentDescription="@string/todo"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.548"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="@android:color/holo_blue_light" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -36,6 +37,7 @@
 
         <TextView
             android:id="@+id/label_username"
+            android:labelFor="@+id/input_username"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
@@ -46,13 +48,16 @@
 
         <EditText
             android:id="@+id/input_username"
+            android:inputType="text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/blah"
-            android:textSize="14sp" />
+            android:textSize="14sp"
+            android:autofillHints="@string/username" />
 
         <TextView
             android:id="@+id/label_age"
+            android:labelFor="@+id/input_age"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/age"
@@ -60,12 +65,15 @@
 
         <EditText
             android:id="@+id/input_age"
+            android:inputType="text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="14sp" />
+            android:textSize="14sp"
+            android:autofillHints="@string/age" />
 
         <TextView
             android:id="@+id/label_height"
+            android:labelFor="@id/input_height"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/username"
@@ -73,12 +81,15 @@
 
         <EditText
             android:id="@+id/input_height"
+            android:inputType="number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="14sp" />
+            android:textSize="14sp"
+            android:autofillHints="" />
 
         <TextView
             android:id="@+id/label_weight"
+            android:labelFor="@id/input_weight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/weight"
@@ -86,11 +97,12 @@
 
         <EditText
             android:id="@+id/input_weight"
+            android:inputType="number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/defaultWeight"
             android:textSize="14sp"
-            />
+            android:autofillHints="@string/weight" />
     </LinearLayout>
 
     <Button
@@ -106,4 +118,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
         app:layout_constraintVertical_bias="0.07" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

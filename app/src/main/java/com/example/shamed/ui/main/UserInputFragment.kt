@@ -1,7 +1,6 @@
 package com.example.shamed.ui.main
 
 import android.content.Context
-import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,13 +8,16 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
 import com.example.shamed.R
-import kotlinx.android.synthetic.main.main_fragment.*
+import kotlinx.android.synthetic.main.fragment_user_input.*
 
-class MainFragment : Fragment() {
-
+/**
+ * A simple [Fragment] subclass.
+ */
+class UserInputFragment : Fragment() {
     companion object {
-        fun newInstance() = MainFragment()
+        fun newInstance() = UserInputFragment()
     }
 
     private lateinit var viewModel: MainViewModel
@@ -25,7 +27,7 @@ class MainFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val v = inflater.inflate(R.layout.main_fragment, container, false)
+        val v = inflater.inflate(R.layout.fragment_user_input, container, false)
 
         button_save.setOnClickListener {
             viewModel.save(Player(username=input_username.text.toString(),
@@ -61,9 +63,9 @@ class MainFragment : Fragment() {
 
     // todo, import kapt, use runOnUiThread {}
     fun updateHeight(height: Int) {
-       activity?.runOnUiThread {
-           input_height.setText("$height")
-       }
+        activity?.runOnUiThread {
+            input_height.setText("$height")
+        }
     }
 
     fun updateWeight(weight: Int) {

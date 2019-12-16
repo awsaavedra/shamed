@@ -8,4 +8,15 @@
     <string name="_250">250</string>
     <string name="save">Save</string>
     <string name="defaultWeight">250</string>
+    <string name="main">main</string>
+    <string name="email">email</string>
+    <string name="password">password</string>
+    <string name="nutrition_diet">nutrition/diet</string>
+    <string name="exercise">exercise</string>
+    <string name="submit_goals">Submit Goals</string>
+    <string name="google_sign_in">Google Sign In</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home">home</string>
 </resources>
