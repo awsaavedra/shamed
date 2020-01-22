@@ -1,6 +1,5 @@
 package com.example.shamed.ui.main
 
-
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,34 +7,28 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.shamed.R
-import com.example.shamed.ShamedApp
+import kotlinx.android.synthetic.main.fragment_main.view.*
 
 /**
  * A simple [Fragment] subclass.
  */
 class MainFragment : Fragment() {
 
-    companion object {
-        fun newInstance(): MainFragment {
-            return MainFragment()
-        }
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_main, container)
-    }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+        val view = inflater.inflate(R.layout.fragment_main, container, false)
 
-        if (!ShamedApp.isSignedIn) {
-            findNavController().navigate(R.id.dest_space_ship)
-        } else {
-
+        view.button_sign_in.setOnClickListener {
+            findNavController().navigate(R.id.dest_sign_in)
         }
-    }
 
+        view.button_sign_up.setOnClickListener {
+            findNavController().navigate(R.id.dest_sign_up)
+        }
+
+    return view
+    }
 }

@@ -52,7 +52,7 @@
             app:argType="integer" />
 
         <action
-            android:id="@+id/action_dest_sign_up_to_dest_avatar"
+            android:id="@+id/action_next"
             app:destination="@+id/fragment_avatar" />
     </fragment>
     <fragment
@@ -61,11 +61,11 @@
         tools:layout="@layout/fragment_avatar">
         <argument
             android:name="flowStepNumber"
-            android:defaultValue="1"
+            android:defaultValue="2"
             app:argType="integer" />
 
         <action
-            android:id="@+id/action_dest_avatar_to_dest_goals"
+            android:id="@+id/action_next"
             app:destination="@+id/fragment_goals" />
     </fragment>
     <fragment
@@ -74,11 +74,11 @@
         tools:layout="@layout/fragment_goals">
         <argument
             android:name="flowStepNumber"
-            android:defaultValue="1"
+            android:defaultValue="3"
             app:argType="integer" />
 
         <action
-            android:id="@+id/action_dest_goals_to_goals_goals2"
+            android:id="@+id/action_next"
             app:destination="@id/dest_goals2" />
 
     </fragment>
@@ -89,10 +89,10 @@
         tools:layout="@layout/fragment_user_input">
         <argument
             android:name="flowStepNumber"
-            android:defaultValue="1"
+            android:defaultValue="4"
             app:argType="integer" />
         <action
-            android:id="@+id/action_dest_goals_to_dest_space_ship"
+            android:id="@+id/action_next"
             app:destination="@id/dest_space_ship" />
     </fragment>
 
