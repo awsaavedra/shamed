@@ -8,7 +8,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.FragmentActivity
+import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import com.example.shamed.R
+import kotlinx.android.synthetic.main.fragment_sign_up.view.*
 
 class SignUpFragment : Fragment() {
 
@@ -23,7 +26,14 @@ class SignUpFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        return inflater.inflate(R.layout.fragment_signup, container, false)
+
+        val view = inflater.inflate(R.layout.fragment_sign_up, container, false)
+
+        view.button_sign_up.setOnClickListener {
+            findNavController().navigate(R.id.dest_avatar)
+        }
+
+        return view
     }
 
     override fun onAttach(context: Context) {

@@ -45,7 +45,7 @@
     <fragment
         android:id="@+id/dest_sign_up"
         android:name="com.example.shamed.ui.main.SignUpFragment"
-        tools:layout="@layout/fragment_signup">
+        tools:layout="@layout/fragment_sign_up">
         <argument
             android:name="flowStepNumber"
             android:defaultValue="1"
@@ -57,7 +57,7 @@
     </fragment>
     <fragment
         android:id="@+id/dest_avatar"
-        android:name="com.example.shamed.ui.main.SignUpFragment"
+        android:name="com.example.shamed.ui.main.AvatarFragment"
         tools:layout="@layout/fragment_avatar">
         <argument
             android:name="flowStepNumber"
@@ -70,7 +70,7 @@
     </fragment>
     <fragment
         android:id="@+id/dest_goals"
-        android:name="com.example.shamed.ui.main.SignUpFragment"
+        android:name="com.example.shamed.ui.main.GoalsFragment"
         tools:layout="@layout/fragment_goals">
         <argument
             android:name="flowStepNumber"
@@ -79,13 +79,13 @@
 
         <action
             android:id="@+id/action_next"
-            app:destination="@id/dest_goals2" />
+            app:destination="@id/dest_user_input" />
 
     </fragment>
 
     <fragment
-        android:id="@+id/dest_goals2"
-        android:name="com.example.shamed.ui.main.SignUpFragment"
+        android:id="@+id/dest_user_input"
+        android:name="com.example.shamed.ui.main.UserInputFragment"
         tools:layout="@layout/fragment_user_input">
         <argument
             android:name="flowStepNumber"
@@ -98,8 +98,8 @@
 
     <fragment
         android:id="@+id/dest_space_ship"
-        android:name="com.example.shamed.ui.main.SignUpFragment"
-        tools:layout="@layout/fragment_goals">
+        android:name="com.example.shamed.ui.main.SpaceshipFragment"
+        tools:layout="@layout/fragment_spaceship">
     <argument
         android:name="flowStepNumber"
         android:defaultValue="1"

@@ -9,8 +9,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.fragment.findNavController
 import com.example.shamed.R
 import kotlinx.android.synthetic.main.fragment_user_input.*
+import kotlinx.android.synthetic.main.fragment_user_input.view.*
 
 /**
  * A simple [Fragment] subclass.
@@ -29,11 +31,13 @@ class UserInputFragment : Fragment() {
     ): View {
         val v = inflater.inflate(R.layout.fragment_user_input, container, false)
 
-        button_save.setOnClickListener {
+        v.button_save.setOnClickListener {
             viewModel.save(Player(username=input_username.text.toString(),
                 height=input_height.text.toString().toInt(),
                 weight=input_weight.text.toString().toInt(), gems=0)
             )
+
+            findNavController().navigate(R.id.dest_space_ship)
         }
 
         viewModel.player.observe(viewLifecycleOwner, Observer {

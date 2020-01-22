@@ -5,7 +5,7 @@
     android:layout_height="match_parent">
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/name_edit_text"
+        android:id="@+id/nutrition_edit_text"
         android:layout_width="138dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -14,7 +14,7 @@
         android:paddingVertical="20dp" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/password_edit_text"
+        android:id="@+id/exercise_edit_text"
         android:layout_width="141dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
