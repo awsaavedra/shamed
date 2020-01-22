@@ -62,28 +62,27 @@ class UserInputFragment : Fragment() {
     }
 
     // todo, import kapt, use runOnUiThread {}
-    fun updateHeight(height: Int) {
+    private fun updateHeight(height: Int) {
         activity?.runOnUiThread {
             input_height.setText("$height")
         }
     }
 
-    fun updateWeight(weight: Int) {
+    private fun updateWeight(weight: Int) {
         activity?.runOnUiThread {
             input_weight.setText("$weight")
         }
     }
 
-    fun updateUsername(name: String) {
+    private fun updateUsername(name: String) {
         activity?.runOnUiThread {
             input_username.setText(name)
         }
     }
 
-    fun initializePlayerValues() {
+    private fun initializePlayerValues() {
         updateHeight(0)
         updateWeight(250)
         updateUsername("")
     }
-
 }

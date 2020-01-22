@@ -14,31 +14,36 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    app:startDestination="@+id/home_dest"
+    app:startDestination="@+id/dest_main"
     tools:ignore="UnusedNavigation">
 
     <fragment
-        android:id="@+id/home_dest"
-        android:name="com.example.shamed.ui.main.SignUpFragment"
+        android:id="@+id/dest_main"
+        android:name="com.example.shamed.ui.main.MainFragment"
         android:label="@string/main"
         tools:layout="@layout/fragment_main">
         <action
-            android:id="@+id/action_home_dest_to_fragment_signup2"
-            app:destination="@id/fragment_signup" />
+            android:id="@+id/action_dest_main_to_dest_sign_up"
+            app:destination="@id/dest_sign_up" />
+        <action
+            android:id="@+id/action_dest_main_to_dest_sign_in"
+            app:destination="@id/dest_sign_in" />
     </fragment>
 
     <fragment
-        android:id="@+id/fragment_signin"
-        android:name="com.example.shamed.ui.main.SignUpFragment"
-        tools:layout="@layout/fragment_signin">
+        android:id="@+id/dest_sign_in"
+        android:name="com.example.shamed.ui.main.SignInFragment"
+        tools:layout="@layout/fragment_sign_in">
         <argument
             android:name="flowStepNumber"
             app:argType="integer"
             android:defaultValue="1"/>
+        <action android:id="@+id/action_dest_sign_in_to_dest_space_ship"
+            app:destination="@id/dest_space_ship" />
 
     </fragment>
     <fragment
-        android:id="@+id/fragment_signup"
+        android:id="@+id/dest_sign_up"
         android:name="com.example.shamed.ui.main.SignUpFragment"
         tools:layout="@layout/fragment_signup">
         <argument
@@ -47,11 +52,11 @@
             app:argType="integer" />
 
         <action
-            android:id="@+id/action_fragment_signup_to_avatar"
+            android:id="@+id/action_dest_sign_up_to_dest_avatar"
             app:destination="@+id/fragment_avatar" />
     </fragment>
     <fragment
-        android:id="@id/fragment_avatar"
+        android:id="@+id/dest_avatar"
         android:name="com.example.shamed.ui.main.SignUpFragment"
         tools:layout="@layout/fragment_avatar">
         <argument
@@ -60,11 +65,11 @@
             app:argType="integer" />
 
         <action
-            android:id="@+id/action_flow_step_one_dest3_to_flow_step_one_dest4"
+            android:id="@+id/action_dest_avatar_to_dest_goals"
             app:destination="@+id/fragment_goals" />
     </fragment>
     <fragment
-        android:id="@id/fragment_goals"
+        android:id="@+id/dest_goals"
         android:name="com.example.shamed.ui.main.SignUpFragment"
         tools:layout="@layout/fragment_goals">
         <argument
@@ -73,22 +78,33 @@
             app:argType="integer" />
 
         <action
-            android:id="@+id/action_fragment_goals_to_fragment_goals2"
-            app:destination="@id/fragment_user_input" />
+            android:id="@+id/action_dest_goals_to_goals_goals2"
+            app:destination="@id/dest_goals2" />
 
     </fragment>
 
     <fragment
-        android:id="@+id/fragment_user_input"
+        android:id="@+id/dest_goals2"
         android:name="com.example.shamed.ui.main.SignUpFragment"
-        tools:layout="@layout/fragment_goals">
+        tools:layout="@layout/fragment_user_input">
         <argument
             android:name="flowStepNumber"
             android:defaultValue="1"
             app:argType="integer" />
         <action
-            android:id="@+id/action_fragment_goals_to_fragment_user_input"
-            app:destination="@id/fragment_user_input" />
+            android:id="@+id/action_dest_goals_to_dest_space_ship"
+            app:destination="@id/dest_space_ship" />
     </fragment>
+
+    <fragment
+        android:id="@+id/dest_space_ship"
+        android:name="com.example.shamed.ui.main.SignUpFragment"
+        tools:layout="@layout/fragment_goals">
+    <argument
+        android:name="flowStepNumber"
+        android:defaultValue="1"
+        app:argType="integer" />
+    </fragment>
+
 
 </navigation>
