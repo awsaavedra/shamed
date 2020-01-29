@@ -34,7 +34,8 @@ class AvatarFragment : Fragment() {
         // Decorator set-up
         val cardWidthPixels = activity.resources.displayMetrics.widthPixels * 0.80f
         val cardHintPercent = 0.01f
-        recyclerView.addItemDecoration(RVPagerSnapFancyDecorator(activity, cardWidthPixels, cardHintPercent))
+        // TODO: fix
+        recyclerView.addItemDecoration(RVPagerSnapFancyDecorator(activity.baseContext, cardWidthPixels, cardHintPercent))
         return view
     }
 
