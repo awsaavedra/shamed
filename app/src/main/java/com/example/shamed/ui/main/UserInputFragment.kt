@@ -40,8 +40,8 @@ class UserInputFragment : Fragment() {
             findNavController().navigate(R.id.dest_space_ship)
         }
 
-        viewModel.player.observe(viewLifecycleOwner, Observer {
-            if (it == null) {
+            viewModel.player.observe(viewLifecycleOwner, Observer {
+                if (it == null) {
                 initializePlayerValues()
                 return@Observer
             }

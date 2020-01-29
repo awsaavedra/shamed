@@ -22,13 +22,11 @@ class GoalsFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_goals, container, false)
         view.submit_button.setOnClickListener {
-            findNavController().navigate(R.id.dest_space_ship)
+            findNavController().navigate(R.id.dest_user_input)
         }
 
         return view
     }
-
-
     companion object {
         /**
          * Use this factory method to create a new instance of
