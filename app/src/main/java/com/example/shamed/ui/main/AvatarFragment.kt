@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.shamed.R
 import kotlinx.android.synthetic.main.fragment_avatar.view.*
 
@@ -21,9 +23,18 @@ class AvatarFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_avatar, container, false)
-        view.imageView.setOnClickListener {
-            findNavController().navigate(R.id.dest_goals)
+        view.recycler_view.setOnClickListener {
+//            findNavController().navigate(R.id.dest_goals)
+
         }
+
+        val recyclerView = view.findViewById<RecyclerView>(R.id.recycler_view)
+        // Usual setups
+        recyclerView.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
+        // Decorator set-up
+        val cardWidthPixels = activity.resources.displayMetrics.widthPixels * 0.80f
+        val cardHintPercent = 0.01f
+        recyclerView.addItemDecoration(RVPagerSnapFancyDecorator(activity, cardWidthPixels, cardHintPercent))
         return view
     }
 
