@@ -1,5 +1,7 @@
 package com.example.shamed.ui.main
 
+import android.app.Activity
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -18,26 +20,7 @@ import kotlinx.android.synthetic.main.fragment_avatar.view.*
  */
 class AvatarFragment : Fragment() {
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        val view = inflater.inflate(R.layout.fragment_avatar, container, false)
-        view.recycler_view.setOnClickListener {
-//            findNavController().navigate(R.id.dest_goals)
-
-        }
-
-        val recyclerView = view.findViewById<RecyclerView>(R.id.recycler_view)
-        // Usual setups
-        recyclerView.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
-        // Decorator set-up
-        val cardWidthPixels = activity.resources.displayMetrics.widthPixels * 0.80f
-        val cardHintPercent = 0.01f
-        // TODO: fix
-        recyclerView.addItemDecoration(RVPagerSnapFancyDecorator(activity.baseContext, cardWidthPixels, cardHintPercent))
-        return view
-    }
+    lateinit var recyclerView: RecyclerView
 
     companion object {
         /**
@@ -53,4 +36,33 @@ class AvatarFragment : Fragment() {
                 }
             }
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        view.apply {
+
+            recyclerView = this.recycler_view
+            recyclerView.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
+
+            recyclerView.adapter = RecyclerViewAdapter(context, arrayListOf("a","b","c"))
+
+            val cardWidthPixels = view.context.resources.displayMetrics.widthPixels * 0.80f
+            val cardHintPercent = 0.01f
+
+            recyclerView.addItemDecoration(RVPagerSnapFancyDecorator(view.context, cardWidthPixels.toInt(), cardHintPercent))
+        }
+        super.onViewCreated(view, savedInstanceState)
+    }
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        val view = inflater.inflate(R.layout.fragment_avatar, container, false)
+        view.recycler_view.setOnClickListener {
+//            findNavController().navigate(R.id.dest_goals)
+        }
+        // Usual setups
+        return view
+    }
+
 }

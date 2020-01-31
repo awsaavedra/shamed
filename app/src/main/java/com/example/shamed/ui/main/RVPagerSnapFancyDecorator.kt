@@ -50,7 +50,6 @@ open class RVPagerSnapFancyDecorator : RecyclerView.ItemDecoration {
         outRect.set(leftInset, 0, rightInset, 0)
     }
 
-
     private fun isFirstItem(index: Int) = index == 0
 
     private fun isLastItem(index: Int, recyclerView: RecyclerView): Boolean {
